@@ -15,9 +15,9 @@ async def on_message(message):
         return
     
     if message.content == 'Julio' or "julio":
-        await message.reply.channel.send('Julio eh bobao')
-    if message.content == 'bye':
-        await message.reply.channel.send(f'Goodbye {message.author}')
+        await message.channel.send('Julio eh otaku')
+    if message.content == 'prova':
+        await message.channel.send("Prova eh o caralho, tia do julio eh minha")
 
     await bot.process_commands(message)
 
