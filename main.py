@@ -14,8 +14,10 @@ async def on_message(message):
     if message.author == bot.user: 
         return
     
-    if message.content == 'Julio' or "julio":
+    if message.content == 'Julio':
         await message.channel.send('Julio eh otaku')
+    if message.content == 'julio':
+        await message.channel.send('Julio, como vai sua tia?')
     if message.content == 'prova':
         await message.channel.send("Prova eh o caralho, tia do julio eh minha")
 
