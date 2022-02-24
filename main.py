@@ -1,3 +1,4 @@
+from random import randint
 import os
 from discord.ext import commands
 TOKEN = os.getenv("TOKEN")
@@ -13,14 +14,30 @@ async def on_message(message):
     # Make sure the Bot doesn't respond to it's own messages
     if message.author == bot.user: 
         return
-    
-    if message.content == 'Julio':
-        await message.channel.send('Julio eh otaku')
-    if message.content == 'julio':
-        await message.channel.send('Julio, como vai sua tia?')
-    if message.content == 'prova':
-        await message.channel.send("Prova eh o caralho, tia do julio eh minha")
+    if message.author.name == "macedo":
+        await message.reply('Cala boca julio')
+        return await bot.process_commands(message)
+    lista = ["Julio", "julio","otaku", "Otaku","prova","Prova","@Juliao","@Julião","Julião","Juliao"]
+    for i in lista:
+        b=0
+        a = re.findall(i,message.content)
+        if a !=[]:
+            b = randint(1,4)
+        if b == 1:
+            await message.reply('Julio eh otaku')
+            break
+        elif b == 2:
+            await message.reply('Julio, como vai sua tia?')
+            break
+        elif b == 3:
+            await message.reply(f"{i} eh o caralho, tia do julio eh minha")
+            break
+        elif b == 4:
+            await message.reply(f"ihhhhhhh ala, ta falando de {i}, o que importa mesmo eh a tia do julio")
+            break
+        
 
     await bot.process_commands(message)
 
 bot.run(TOKEN)
+
