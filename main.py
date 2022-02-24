@@ -14,7 +14,7 @@ async def on_message(message):
     # Make sure the Bot doesn't respond to it's own messages
     if message.author == bot.user: 
         return
-    if message.author.name == "macedo":
+    if message.author.name == "Julião":
         await message.reply('Cala boca julio')
         return await bot.process_commands(message)
     lista = ["Julio", "julio","otaku", "Otaku","prova","Prova","@Juliao","@Julião","Julião","Juliao"]
