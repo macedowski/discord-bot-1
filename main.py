@@ -1,6 +1,7 @@
 from random import randint
 import os
 from discord.ext import commands
+import re
 TOKEN = os.getenv("TOKEN")
 
 bot = commands.Bot(command_prefix="!")
